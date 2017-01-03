@@ -1,0 +1,164 @@
+R2#term len 0
+R2# config t 
+R2#term len 0
+R2# config t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)# interface lo69 
+R2(config-if)# 
+R2#term len 0
+R2# config t R6#term len 0
+R6#
+R6#show configuration
+Using 1770 out of 522232 bytes!
+!
+!
+
+!
+! Last configuration change at 10:59:47 UTC Thu Dec 29 2016
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R6
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable password cisco
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip domain name CISCO
+ip cef
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+username admin privilege 15 password 0 cisco
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback10
+ ip address 10.10.12.1 255.255.255.0
+!
+interface Loopback11
+ ip address 10.10.11.1 255.255.255.0
+!
+interface Loopback12
+ ip address 10.10.23.1 255.255.255.0
+!
+interface Loopback13
+ ip address 10.10.33.1 255.255.255.0
+!
+interface FastEthernet0/0
+ ip address 192.168.10.6 255.255.255.252
+ duplex full
+!
+interface FastEthernet1/0
+ ip address 192.168.10.14 255.255.255.252
+ speed auto
+ duplex auto
+!
+interface FastEthernet1/1
+ ip address 172.37.1.10 255.255.255.0
+ speed auto
+ duplex auto
+!
+interface FastEthernet2/0
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+!
+interface FastEthernet2/1
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+!
+interface FastEthernet3/0
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+!
+interface FastEthernet3/1
+ no ip address
+ shutdown
+ speed auto
+ duplex auto
+!
+!
+router eigrp 1
+ network 0.0.0.0
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ privilege level 15
+ login local
+ transport input all
+line vty 5 15
+ privilege level 15
+ login local
+ transport input all
+!
+!
+end
+
+R6#
+R6#
+R2#term len 0
+R2#
+R6#term len 0
+R6#
+R6#sh
+R6#term len 0

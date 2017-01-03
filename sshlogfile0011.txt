@@ -1,0 +1,35 @@
+
+R1#term len 0
+R1# config t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)# interface lo75 
+R1(config-if)# descrip TEST-B 
+R1(config-if)# end 
+R1# show run int loop 75 
+Building configuration...
+
+Current configuration : 64 bytes
+!
+interface Loopback75
+ description TEST-B 
+ no ip address
+end
+
+R1#
+R2#term len 0
+R2# config t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)# interface lo75 
+R2(config-if)# descrip TEST-B 
+R2(config-if)# end 
+R2# show run int loop 75 
+Building configuration...
+
+Current configuration : 64 bytes
+!
+interface Loopback75
+ description TEST-B 
+ no ip address
+end
+
+R2#
